@@ -1,0 +1,150 @@
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d66161;
+  height: 120px;
+  padding: 10px 0px;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+  margin-top: 5px;
+}
+@media (max-width: 600px) {
+  .dropdown-Menu {
+    white-space: nowrap; /* 화면이 600px 미만으로 줄어들면 텍스트 짤림 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+#header-area img {
+  width: 130px;
+  height: 130px;
+  flex-shrink: 0;
+}
+
+/* 가로 메뉴를 감싸는 컨테이너 */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 100px;
+}
+
+.navbarMenu,
+.dropdownContent,
+.header-links a {
+  text-decoration: none;
+  color: #000000;
+  white-space: nowrap;
+}
+
+/* 헤더 영역 스타일 */
+#header-area {
+  width: 100%;
+  display: flex;
+  margin-top: 30px;
+  align-items: center;
+  justify-content: space-around; /*좌우 정렬을 유지 */
+}
+
+/* 일반 메뉴 항목 */
+.navbarMenu {
+  margin: 20px;
+  font-size: 17px;
+  display: inline-block;
+}
+
+/* 드롭다운 메뉴 컨테이너 */
+.dropdown {
+  position: relative;
+  display: table-cell;
+  cursor: pointer;
+  justify-content: center;
+  font-size: 17px;
+}
+
+/* 드롭다운 메뉴 내용 */
+.dropdownContent {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  z-index: 1;
+}
+
+/* 가로로 정렬된 드롭다운 내용 */
+.dropdownContent.horizontal {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 드롭다운 내용의 링크 */
+.dropdownContent a {
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+  color: #000000;
+  white-space: nowrap;
+  margin-bottom: 5px; /* 하위 메뉴 간격 조절 */
+}
+
+/* 드롭다운 내용에 호버 효과 */
+.dropdown:hover .dropdownContent {
+  display: block;
+}
+
+/* 드롭다운 내용의 링크에 호버 효과 */
+.dropdownContent a:hover {
+  color: #ffa8a8;
+}
+
+/* 스크롤된 헤더 스타일 */
+.scrolled-header {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  padding: 10px 20px;
+}
+
+/* 검색창 스타일 */
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  justify-content: flex-end; /* 검색창을 오른쪽으로 이동 */
+  margin-left: 50px;
+}
+
+.search-input {
+  padding: 10px;
+  border: none;
+  background-color: #ebebeb;
+  border-radius: 32px;
+  width: 350px;
+  font-size: 17px;
+}
+
+.search-button {
+  position: absolute;
+  color: #000000;
+  border: none;
+  background-color: #ebebeb;
+  font-size: 20px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #fff;
+  border: none;
+  border-bottom: 1px solid #ccc;
+}

@@ -1,0 +1,78 @@
+.list-container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+li {
+  list-style: none;
+}
+
+/* 식당별 */
+.item {
+  /* padding: 10px; */
+  border: 1px solid rgb(235, 235, 235);
+  border-radius: 5px;
+  margin: 10px;
+}
+
+/* 음식사진 */
+.food-img {
+  width: 409px;
+  height: 300px;
+  max-width: 100%;
+  max-height: 65%;
+  border-radius: 5px 5px 0px 0px;
+  display: flex;
+  object-fit: cover;
+}
+
+/* 레스토랑 별 글 */
+.restaurant-text {
+  padding: 10px;
+}
+
+/* 레스토랑 이름 */
+.restaurant-name {
+  font-weight: bold;
+  text-decoration-line: none;
+  color: black;
+  font-size: 24px;
+}
+.restaurant-name:hover {
+  color: #b38324;
+}
+
+/* 식당 설명 */
+.description-text {
+  max-width: calc(350px);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-top: 10px;
+  color: rgb(76, 76, 76);
+}
+
+/* 영업시간 */
+.format-time {
+  display: inline-flex;
+  margin-top: 10px;
+  color: grey;
+}
+/* 전화번호 */
+.callNumber-text {
+  color: grey;
+  margin-top: 2px;
+}
+
+/* 카테고리 */
+.category-text {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #edb13a;
+  display: flex;
+  justify-content: flex-end;
+}
