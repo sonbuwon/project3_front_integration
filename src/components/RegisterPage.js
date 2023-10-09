@@ -70,6 +70,7 @@ function RegisterPage() {
       <p>회원가입 페이지</p>
       <div>
         <input
+          type="text"
           value={username}
           onChange={handleUsernameChange}
           placeholder="아이디"
@@ -85,6 +86,7 @@ function RegisterPage() {
         />
         <br />
         <input
+          type="text"
           value={nickname}
           onChange={handleNicknameChange}
           placeholder="닉네임"
@@ -106,6 +108,7 @@ function RegisterPage() {
         />
         <br />
         <input
+          type="text"
           value={phoneNumber}
           onChange={handlePhoneNumberChange}
           placeholder="연락처"

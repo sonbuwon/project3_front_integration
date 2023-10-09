@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { localurl } from "../utils/localUrl";
 import { formatTime } from "../utils/formatTime";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+import "../styles/RestaurantList.css";
 
 function TopRatedRestaurantList() {
+  const navigate = useNavigate();
   const [restaurants, setRestaurants] = useState([]);
 
   // 마운트시 예약 횟수가 많은 순서대로 식당 목록 출력
@@ -23,50 +26,48 @@ function TopRatedRestaurantList() {
 
   return (
     <div>
-      <h3>인기 TOP목록</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>대표 이미지</th>
-            <th>식당명</th>
-            <th>위치</th>
-            <th>카테고리</th>
-            <th>소개</th>
-            <th>오픈 시간</th>
-            <th>마감 시간</th>
-            <th>전화번호</th>
-            <th>예약횟수</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
+      <div>
+        <h3 className="mb-10 text-4xl flex justify-center">인기 TOP 목록</h3>
+        <div className="list-container">
           {restaurants.map((restaurant) => (
-            <tr key={restaurant.id}>
-              <td>
-                <td>
-                  <img
-                    src={`${localurl}/store/${restaurant.id}/image/${restaurant.imageOneId}`}
-                    alt={`${restaurant.name}-${restaurant.imageOneId}`}
-                    width={"200"}
-                  />
-                </td>
-              </td>
-              <td>
-                <Link to={`/restaurant/${restaurant.id}`}>
-                  {restaurant.name}
-                </Link>
-              </td>
-              <td>{restaurant.location}</td>
-              <td>{restaurant.category}</td>
-              <td>{restaurant.description}</td>
-              <td>{formatTime(restaurant.openingTime)}</td>
-              <td>{formatTime(restaurant.closingTime)}</td>
-              <td>{restaurant.callNumber}</td>
-              <td>{restaurant.reservationCount}</td>
-            </tr>
+            <ul className="item shadow-md" key={restaurant.id}>
+              <li>
+                <img
+                  // 이미지 클릭시에도 식당 상세페이지로 이동
+                  onClick={() => {
+                    navigate(`/restaurant/${restaurant.id}`);
+                  }}
+                  className="food-img cursor-pointer"
+                  src={`${localurl}/store/${restaurant.id}/image/${restaurant.imageOneId}`}
+                  alt={`${restaurant.name}-${restaurant.imageOneId}`}
+                />
+              </li>
+              <ul className="restaurant-text">
+                <li>
+                  <Link
+                    className="restaurant-name"
+                    to={`/restaurant/${restaurant.id}`}
+                  >
+                    {restaurant.name}
+                  </Link>
+                </li>
+                <li className="description-text">{restaurant.description}</li>
+                <ul className="format-time">
+                  <li>영업시간: {formatTime(restaurant.openingTime)}~</li>
+                  <li>{formatTime(restaurant.closingTime)}</li>
+                </ul>
+                <li className="callNumber-text">
+                  전화번호: {restaurant.callNumber}
+                </li>
+                <li className="reservationCount-text">
+                  예약횟수: {restaurant.reservationCount}회
+                </li>
+                <li className="category-text">{restaurant.category}</li>
+              </ul>
+            </ul>
           ))}
-        </tbody>
-      </table>
+        </div>
+      </div>
     </div>
   );
 }

@@ -26,10 +26,10 @@ function RestaurantList() {
   return (
     <div>
       <div>
-        <h3>식당 목록</h3>
+        <h3 className="mb-10 text-4xl flex justify-center">식당 목록</h3>
         <div className="list-container">
           {restaurants.map((restaurant) => (
-            <ul className="item" key={restaurant.id}>
+            <ul className="item shadow-md" key={restaurant.id}>
               <li>
                 <img
                   // 이미지 클릭시에도 식당 상세페이지로 이동

@@ -29,7 +29,12 @@ function Navbar({ userRole }) {
     <div className="header">
       <div className="header-area">
         <div>
-          <input value={keyword} onChange={(e) => setKeyword(e.target.value)} />
+          <input
+            type="text"
+            value={keyword}
+            placeholder="검색"
+            onChange={(e) => setKeyword(e.target.value)}
+          />
           <button onClick={handleSearch}>검색</button>
         </div>
         <div className="dropdown-Menu">

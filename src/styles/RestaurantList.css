@@ -70,9 +70,16 @@ li {
 
 /* 카테고리 */
 .category-text {
-  margin-top: 10px;
   font-weight: bold;
   color: #edb13a;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* 예약횟수 */
+.reservationCount-text {
+  font-weight: bold;
+  color: grey;
   display: flex;
   justify-content: flex-end;
 }
