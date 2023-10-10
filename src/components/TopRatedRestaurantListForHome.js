@@ -22,7 +22,7 @@ function TopRatedRestaurantListForHome() {
 
   return (
     <div className="mx-auto w-2/4">
-      <h3 className="my-2 text-xl font-bold">실시간 예약</h3>
+      <h3 className="my-2 text-xl font-bold">실시간 인기 예약</h3>
       <div className="flex">
         {/* 상위 3개만 노출 */}
         {restaurants.slice(0, 3).map((restaurant) => (
@@ -37,7 +37,7 @@ function TopRatedRestaurantListForHome() {
                 }}
                 src={`${localurl}/store/${restaurant.id}/image/${restaurant.imageOneId}`}
                 alt={`${restaurant.name}-${restaurant.imageOneId}`}
-                className="w-24 h-24 mb-3 rounded-full shadow-lg cursor-pointer"
+                className="w-32 h-32 mb-3 rounded-full shadow-lg cursor-pointer"
               />
               <h5 className="mb-1 text-l font-bold text-gray-900 dark:text-white">
                 <Link to={`/restaurant/${restaurant.id}`}>

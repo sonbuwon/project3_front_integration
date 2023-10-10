@@ -34,6 +34,22 @@ function Navbar({ userRole }) {
           <Link to={"/"}>Logo</Link>
         </div>
 
+        {/* 메뉴1 */}
+        <div className="dropdown-Menu flex">
+          <ul className="flex">
+            <li className="mr-10">
+              <Link to="/restaurant/top" className="hover:text-amber-500">
+                인기 TOP
+              </Link>
+            </li>
+            <li className="mr-10">
+              <Link to="/restaurant/list" className="hover:text-amber-500">
+                식당 목록
+              </Link>
+            </li>
+          </ul>
+        </div>
+
         {/* 검색창 */}
         <div>
           <input
@@ -45,28 +61,13 @@ function Navbar({ userRole }) {
           <button onClick={handleSearch}>검색</button>
         </div>
 
-        {/* 메뉴 */}
+        {/* 메뉴2 */}
         <div className="dropdown-Menu flex">
           {/* 접속 유저 닉네임 */}
           <div className="mr-10">
             <UserProfile />
           </div>
           <ul className="flex">
-            <li className="mr-10">
-              <Link to="/" className="hover:text-amber-500">
-                홈
-              </Link>
-            </li>
-            <li className="mr-10">
-              <Link to="/restaurant/top" className="hover:text-amber-500">
-                인기 TOP
-              </Link>
-            </li>
-            <li className="mr-10">
-              <Link to="/restaurant/list" className="hover:text-amber-500">
-                식당 목록
-              </Link>
-            </li>
             {userRole === null && (
               <li className="mr-10">
                 <Link to="/user/signup" className="hover:text-amber-500">
