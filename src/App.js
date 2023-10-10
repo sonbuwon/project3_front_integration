@@ -11,7 +11,7 @@ import RestaurantDetailPage from "./components/RestaurantDetailPage";
 import RestaurantForm from "./components/RestaurantForm";
 import RestaurantList from "./components/RestaurantList";
 // import SamplePage from "./components/SamplePage";
-import UserProfile from "./components/UserProfile";
+// import UserProfile from "./components/UserProfile";
 import TopRatedRestaurantList from "./components/TopRatedRestaurantList";
 import Navbar from "./components/Navbar";
 import MyPage from "./components/MyPage";
@@ -40,100 +40,111 @@ function App() {
 
   return (
     <div className="App">
-      <UserProfile />
-      <Router>
-        <Navbar userRole={userRole} />
-        <Routes>
-          {/* 홈 */}
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/user/signup"
-            element={
-              <ProtectedRoute
-                element={<RegisterPage />}
-                userRole={userRole}
-                requiredRole={null}
-                redirectTo="/"
-              />
-            }
-          />
-          <Route
-            path="/user/login"
-            element={
-              <ProtectedRoute
-                element={<LoginPage />}
-                userRole={userRole}
-                requiredRole={null}
-                redirectTo="/"
-              />
-            }
-          />
-          <Route
-            path="/user/mypage"
-            element={
-              <ProtectedRoute
-                element={<MyPage />}
-                userRole={userRole}
-                requiredRole="ROLE_USER"
-                redirectTo="/"
-              />
-            }
-          />
-          <Route
-            path="/user/edituser"
-            element={
-              <ProtectedRoute
-                element={<EditUserPage />}
-                userRole={userRole}
-                requiredRole="ROLE_USER"
-                redirectTo="/"
-              />
-            }
-          />
-          <Route path="/restaurant/list" element={<RestaurantList />} />
-          <Route path="/restaurant/:id" element={<RestaurantDetailPage />} />
-          <Route path="/restaurant/top" element={<TopRatedRestaurantList />} />
-          <Route
-            path="/restaurant/byCategory/:category"
-            element={<CategoryRestaurantList />}
-          />
-          {/* 검색 결과 */}
-          <Route path="/restaurant/search" element={<SearchList />} />
-          <Route
-            path="/admin/registerRestaurant"
-            element={
-              <ProtectedRoute
-                element={<RestaurantForm />}
-                userRole={userRole}
-                requiredRole="ROLE_ADMIN"
-                redirectTo="/"
-              />
-            }
-          />
-          <Route
-            path="/admin/restaurantList"
-            element={
-              <ProtectedRoute
-                element={<AdminRestaurantList />}
-                userRole={userRole}
-                requiredRole="ROLE_ADMIN"
-                redirectTo="/"
-              />
-            }
-          />
-          <Route
-            path="/admin/userList"
-            element={
-              <ProtectedRoute
-                element={<RoleUserList />}
-                userRole={userRole}
-                requiredRole="ROLE_ADMIN"
-                redirectTo="/"
-              />
-            }
-          />
-        </Routes>
-      </Router>
+      <div>
+        {/* 테마 색상 칸 */}
+        <div className="h-1.5 mb-2 bg-amber-500"></div>
+        {/* <UserProfile /> */}
+        <Router>
+          <Navbar userRole={userRole} />
+          <Routes>
+            {/* 홈 */}
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/user/signup"
+              element={
+                <ProtectedRoute
+                  element={<RegisterPage />}
+                  userRole={userRole}
+                  requiredRole={null}
+                  redirectTo="/"
+                />
+              }
+            />
+            <Route
+              path="/user/login"
+              element={
+                <ProtectedRoute
+                  element={<LoginPage />}
+                  userRole={userRole}
+                  requiredRole={null}
+                  redirectTo="/"
+                />
+              }
+            />
+            <Route
+              path="/user/mypage"
+              element={
+                <ProtectedRoute
+                  element={<MyPage />}
+                  userRole={userRole}
+                  requiredRole="ROLE_USER"
+                  redirectTo="/"
+                />
+              }
+            />
+            <Route
+              path="/user/edituser"
+              element={
+                <ProtectedRoute
+                  element={<EditUserPage />}
+                  userRole={userRole}
+                  requiredRole="ROLE_USER"
+                  redirectTo="/"
+                />
+              }
+            />
+            <Route path="/restaurant/list" element={<RestaurantList />} />
+            <Route path="/restaurant/:id" element={<RestaurantDetailPage />} />
+            <Route
+              path="/restaurant/top"
+              element={<TopRatedRestaurantList />}
+            />
+            <Route
+              path="/restaurant/byCategory/:category"
+              element={<CategoryRestaurantList />}
+            />
+            {/* 검색 결과 */}
+            <Route path="/restaurant/search" element={<SearchList />} />
+            <Route
+              path="/admin/registerRestaurant"
+              element={
+                <ProtectedRoute
+                  element={<RestaurantForm />}
+                  userRole={userRole}
+                  requiredRole="ROLE_ADMIN"
+                  redirectTo="/"
+                />
+              }
+            />
+            <Route
+              path="/admin/restaurantList"
+              element={
+                <ProtectedRoute
+                  element={<AdminRestaurantList />}
+                  userRole={userRole}
+                  requiredRole="ROLE_ADMIN"
+                  redirectTo="/"
+                />
+              }
+            />
+            <Route
+              path="/admin/userList"
+              element={
+                <ProtectedRoute
+                  element={<RoleUserList />}
+                  userRole={userRole}
+                  requiredRole="ROLE_ADMIN"
+                  redirectTo="/"
+                />
+              }
+            />
+          </Routes>
+        </Router>
+        {/* 푸터 */}
+        <div className="fixed bottom-0 left-0 right-0 bg-gray-800 text-white py-2">
+          Footer
+        </div>
+      </div>
     </div>
   );
 }

@@ -33,9 +33,9 @@ function UserProfile() {
   return (
     <div>
       {isAuthenticated ? (
-        <p>접속한 유저: {userNickname}</p>
+        <p className="font-bold">안녕하세요! {userNickname}님</p>
       ) : (
-        <p>로그인이 필요합니다.</p>
+        <p className="font-bold">로그인이 필요합니다</p>
       )}
     </div>
   );

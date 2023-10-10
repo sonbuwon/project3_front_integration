@@ -24,51 +24,53 @@ function CategoryRestaurantList() {
       });
   }, [category]);
 
-  if (restaurants.length === 0) {
-    return <div>데이터를 불러올 수 없습니다.</div>;
-  }
-
   return (
     <div>
-      <div>
-        <h3 className="mb-10 text-4xl flex justify-center">{category} 목록</h3>
-        <div className="list-container">
-          {restaurants.map((restaurant) => (
-            <ul className="item shadow-md" key={restaurant.id}>
-              <li>
-                <img
-                  // 이미지 클릭시에도 식당 상세페이지로 이동
-                  onClick={() => {
-                    navigate(`/restaurant/${restaurant.id}`);
-                  }}
-                  className="food-img cursor-pointer"
-                  src={`${localurl}/store/${restaurant.id}/image/${restaurant.imageOneId}`}
-                  alt={`${restaurant.name}-${restaurant.imageOneId}`}
-                />
-              </li>
-              <ul className="restaurant-text">
+      {restaurants.length === 0 ? (
+        <div className="w-max mx-auto">등록된 식당이 없습니다.</div>
+      ) : (
+        <div>
+          <h3 className="mb-10 text-4xl flex justify-center">
+            {category} 목록
+          </h3>
+          <div className="list-container">
+            {restaurants.map((restaurant) => (
+              <ul className="item shadow-md" key={restaurant.id}>
                 <li>
-                  <Link
-                    className="restaurant-name"
-                    to={`/restaurant/${restaurant.id}`}
-                  >
-                    {restaurant.name}
-                  </Link>
+                  <img
+                    // 이미지 클릭시에도 식당 상세페이지로 이동
+                    onClick={() => {
+                      navigate(`/restaurant/${restaurant.id}`);
+                    }}
+                    className="food-img cursor-pointer"
+                    src={`${localurl}/store/${restaurant.id}/image/${restaurant.imageOneId}`}
+                    alt={`${restaurant.name}-${restaurant.imageOneId}`}
+                  />
                 </li>
-                <li className="description-text">{restaurant.description}</li>
-                <ul className="format-time">
-                  <li>영업시간: {formatTime(restaurant.openingTime)}~</li>
-                  <li>{formatTime(restaurant.closingTime)}</li>
+                <ul className="restaurant-text">
+                  <li>
+                    <Link
+                      className="restaurant-name"
+                      to={`/restaurant/${restaurant.id}`}
+                    >
+                      {restaurant.name}
+                    </Link>
+                  </li>
+                  <li className="description-text">{restaurant.description}</li>
+                  <ul className="format-time">
+                    <li>영업시간: {formatTime(restaurant.openingTime)}~</li>
+                    <li>{formatTime(restaurant.closingTime)}</li>
+                  </ul>
+                  <li className="callNumber-text">
+                    전화번호: {restaurant.callNumber}
+                  </li>
+                  <li className="category-text">{restaurant.category}</li>
                 </ul>
-                <li className="callNumber-text">
-                  전화번호: {restaurant.callNumber}
-                </li>
-                <li className="category-text">{restaurant.category}</li>
               </ul>
-            </ul>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
