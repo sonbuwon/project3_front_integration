@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { localurl } from "../utils/localUrl";
 import { formatDay } from "../utils/formatDay";
+import "../styles/MyPage.css";
 
 function MyPage() {
   const navigate = useNavigate();
@@ -90,55 +91,80 @@ function MyPage() {
         console.error("Error deleting reservation: ", error);
       });
   };
-
   return (
-    <div>
-      {/* 예약 정보 */}
-      <div>
-        <h3>{userInfo.nickname}님의 마이페이지</h3>
-        <h3>예약 리스트</h3>
-        <ul>
-          {userInfo.reservationList.length > 0 ? (
-            <ul>
-              {userInfo.reservationList.map((reservation, index) => (
-                <li key={index}>
-                  {reservation.restaurant_name}
-                  <button
-                    onClick={() =>
-                      deleteReservation(reservation.reservation_id)
-                    }
-                  >
-                    예약 삭제
-                  </button>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>예약 내역이 없습니다</p>
-          )}
-        </ul>
+    <div className="wrap">
+      <div className="greenContainer">
+        <div className="name">{userInfo.nickname}님의 마이페이지</div>
       </div>
+
+      <div className="summaryContainer">
+        <div className="item">
+          <div className="number">
+            <h3>예약 리스트</h3>
+          </div>
+          <ul>
+            {userInfo.reservationList.length > 0 ? (
+              <ul>
+                {userInfo.reservationList.map((reservation, index) => (
+                  <li key={index}>
+                    {reservation.restaurant_name}
+                    <button
+                      onClick={() =>
+                        deleteReservation(reservation.reservation_id)
+                      }
+                    >
+                      예약 삭제
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <div className="text">예약 내역이 없습니다.</div>
+            )}
+          </ul>
+        </div>
+      </div>
+
       {/* 회원 정보 */}
-      <div>
-        <h3>회원 정보</h3>
-        <p>
-          <span>이메일: </span>
-          {userInfo.email}
-        </p>
-        <p>
-          <span>연락처: </span>
-          {userInfo.phoneNumber}
-        </p>
-        <p>
-          <span>생년월일: </span>
-          {formatDay(userInfo.birth)}
-        </p>
-        <p>
-          <button onClick={editUserInfo}>회원 정보 수정</button>
-        </p>
+      <div className="listContainer">
+        <div className="number">
+          <h3>회원 정보</h3>
+        </div>
+        <div className="item">
+          <div className="text">이메일 : {userInfo.email}</div>
+          <div className="right"></div>
+        </div>
+        <div className="item">
+          <div className="text">연락처 : {userInfo.phoneNumber}</div>
+          <div className="right"></div>
+        </div>
+        <div className="item">
+          <div className="text">생년월일 : {formatDay(userInfo.birth)}</div>
+          <div className="right"></div>
+        </div>
+        <div className="item">
+          <div className="text">이메일 : {userInfo.email}</div>
+          <div className="right"></div>
+        </div>
+        <div className="button-container">
+          <button className="listbutton" onClick={editUserInfo}>
+            회원 정보 수정
+          </button>
+        </div>
+      </div>
+
+      <div className="infoContainer">
+        <Link to="/" className="item">
+          <div>공지사항</div>
+        </Link>
+        <Link to="/" className="item">
+          <div>이용안내</div>
+        </Link>
+        <Link to="/" className="item">
+          <div>고객센터</div>
+        </Link>
       </div>
     </div>
   );
 }
-
 export default MyPage;

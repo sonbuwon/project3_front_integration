@@ -1,0 +1,75 @@
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #fff;
+}
+
+/*로고 이미지 부분*/
+.login-form-header {
+  margin-bottom: 50px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+/*로그인 폼*/
+.login-form {
+  width: 500px;
+}
+
+/*로그인,회원가입 버튼 스타일*/
+.login-form-button {
+  width: 500px;
+  background-color: #fcc555;
+  color: #ffffff;
+  height: 50px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  border: none;
+}
+/* 버튼을 호버할 때(마우스를 올릴 때) 배경색 변경 */
+.login-form-button:hover {
+  background-color: #ffb012; /* 원하는 호버 배경색으로 변경 */
+}
+
+/*아이디,비번,회원가입*/
+.login-links {
+  color: #8b8b8b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  font-size: 17px;
+}
+.checkbox {
+  font-size: 15px;
+  color: #8b8b8b;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.kakao-login-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.kakao-login-button img {
+  margin-right: 8px; /* 이미지와 텍스트 간격을 조절 */
+  width: 500px;
+  margin-top: 20px;
+}
+/* 가로와 세로 크기를 지정하는 CSS */
+.my-input {
+  width: 500px; /* 가로 크기 지정 (예: 200px) */
+  height: 50px; /* 세로 크기 지정 (예: 40px) */
+  margin-bottom: 10px;
+}
+.my-image {
+  width: 150px; /* 가로 크기 지정 (예: 200px) */
+  height: 150px; /* 세로 크기 지정 (예: 150px) */
+}

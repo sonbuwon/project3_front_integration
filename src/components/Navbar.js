@@ -28,10 +28,12 @@ function Navbar({ userRole }) {
 
   return (
     <div className="header mb-2">
-      <div className="header-area flex justify-around">
+      <div className="header-area flex justify-around items-center">
         {/* 로고 */}
         <div>
-          <Link to={"/"}>Logo</Link>
+          <Link to={"/"}>
+            <img src="/img/icons/fooiting.png" alt="logo_image" />
+          </Link>
         </div>
 
         {/* 메뉴1 */}
@@ -51,14 +53,37 @@ function Navbar({ userRole }) {
         </div>
 
         {/* 검색창 */}
-        <div>
+        <div className="w-1/4 flex relative">
           <input
             type="text"
             value={keyword}
-            placeholder="검색"
+            placeholder="검색어를 입력하세요"
             onChange={(e) => setKeyword(e.target.value)}
+            className="w-full px-4 py-2 border-none rounded-full bg-gray-200"
           />
-          <button onClick={handleSearch}>검색</button>
+          <div
+            onClick={handleSearch}
+            class="absolute inset-y-0 right-4 flex items-center pl-3 cursor-pointer"
+          >
+            <svg
+              class="w-4 h-4 text-gray-500 dark:text-gray-400"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 20 20"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+              />
+            </svg>
+          </div>
+          {/* <button onClick={handleSearch} className="w-1/4">
+            검색
+          </button> */}
         </div>
 
         {/* 메뉴2 */}

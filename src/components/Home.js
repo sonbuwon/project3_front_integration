@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import TopRatedRestaurantListForHome from "./TopRatedRestaurantListForHome";
+import MainBanner from "./MainBanner";
 
 function Home() {
   return (
     <div>
       <div>
-        {/* 홈 메인 이미지 */}
-        <div className="my-2 py-2 bg-gray-200 ">메인 이미지</div>
+        {/* 홈 배너 이미지 */}
+        <MainBanner />
         {/* 카테고리 칸 */}
         <div className="mx-auto w-2/4 grid grid-cols-4 gap-4">
           <p className="p-4 flex justify-center border hover:border-orange-500">
