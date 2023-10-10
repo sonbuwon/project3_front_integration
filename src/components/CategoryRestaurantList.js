@@ -30,7 +30,7 @@ function CategoryRestaurantList() {
         <div className="w-max mx-auto">등록된 식당이 없습니다.</div>
       ) : (
         <div>
-          <h3 className="mb-10 text-4xl flex justify-center">
+          <h3 className="my-10 text-4xl flex justify-center">
             {category} 목록
           </h3>
           <div className="list-container">

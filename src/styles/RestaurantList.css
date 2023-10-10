@@ -52,6 +52,7 @@ li {
   max-width: calc(350px);
   overflow: hidden;
   white-space: nowrap;
+  /* 글자수 초과시 */
   text-overflow: ellipsis;
   margin-top: 10px;
   color: rgb(76, 76, 76);

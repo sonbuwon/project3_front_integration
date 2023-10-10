@@ -47,8 +47,9 @@ function KakaoMap({ location }) {
   }, []);
 
   return (
-    <div>
-      <div id="map" style={{ width: "350px", height: "250px" }}></div>
+    <div className="border border-black">
+      {/* 기존 맵 */}
+      <div id="map" style={{ width: "550px", height: "350px" }}></div>
     </div>
   );
 }
