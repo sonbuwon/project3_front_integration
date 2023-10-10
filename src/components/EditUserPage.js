@@ -56,6 +56,7 @@ function EditUserPage() {
         <input
           defaultValue={userEditInfo.nickname}
           onChange={(e) => setNewNickname(e.target.value)}
+          type="text"
           placeholder="닉네임"
         />
         <br />
@@ -75,6 +76,7 @@ function EditUserPage() {
         <input
           defaultValue={userEditInfo.phoneNumber}
           onChange={(e) => setNewPhonenumber(e.target.value)}
+          type="text"
           placeholder="연락처"
         />
         <br />
