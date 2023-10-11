@@ -134,15 +134,15 @@ function MyPage() {
           <h3 className="text-2xl font-bold">회원 정보</h3>
         </div>
         <div className="item">
-          <div className="text">연락처 : {userInfo.phoneNumber}</div>
+          <div>연락처 : {userInfo.phoneNumber}</div>
           <div className="right"></div>
         </div>
         <div className="item">
-          <div className="text">생년월일 : {formatDay(userInfo.birth)}</div>
+          <div>생년월일 : {formatDay(userInfo.birth)}</div>
           <div className="right"></div>
         </div>
         <div className="item">
-          <div className="text">이메일 : {userInfo.email}</div>
+          <div>이메일 : {userInfo.email}</div>
           <div className="right"></div>
         </div>
         <div className="button-container">

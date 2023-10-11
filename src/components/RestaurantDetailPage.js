@@ -73,8 +73,8 @@ function RestaurantDetailPage() {
           <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
           {/* 식당 설명 및 연락처 */}
           <div className="w-full flex justify-around">
-            <p className="text-slate-700">{restaurant.description}</p>
-            <p className="flex justify-center items-center">
+            <p className="w-1/4 text-slate-700">{restaurant.description}</p>
+            <p className="w-1/4 flex justify-center items-center">
               <IoIosCall className="mr-2" size="24" />
               <span className="text-xl">{restaurant.callNumber}</span>
             </p>
@@ -107,7 +107,7 @@ function RestaurantDetailPage() {
                   }
                 >
                   <img
-                    className="rounded-lg w-full h-80 object-cover"
+                    className="rounded-lg w-full h-80 object-cover transition ease-in-out delay-130 hover:-translate-y-1 hover:scale-105 duration-300"
                     key={index}
                     src={`${localurl}/store/${id}/image/${restaurantImageId}`}
                     alt={`${restaurant.name}-${index}`}

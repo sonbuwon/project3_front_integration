@@ -28,7 +28,7 @@ function TopRatedRestaurantListForHome() {
         {restaurants.slice(0, 3).map((restaurant) => (
           <div
             key={restaurant.id}
-            className="mx-1 w-full max-w-sm bg-white  rounded-lg"
+            className="mx-10 w-full max-w-sm bg-white  rounded-lg"
           >
             <div className="basis-1/3 flex flex-col items-center">
               <img
