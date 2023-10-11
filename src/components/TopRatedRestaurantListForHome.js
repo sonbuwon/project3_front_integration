@@ -21,14 +21,14 @@ function TopRatedRestaurantListForHome() {
   }, []);
 
   return (
-    <div className="mx-auto w-2/4">
-      <h3 className="my-2 text-xl font-bold">실시간 인기 예약</h3>
+    <div className="mt-20 mb-48 mx-auto w-2/4">
+      <h3 className="mt-2 mb-10 text-xl font-bold">실시간 인기 TOP3</h3>
       <div className="flex">
         {/* 상위 3개만 노출 */}
         {restaurants.slice(0, 3).map((restaurant) => (
           <div
             key={restaurant.id}
-            className="mx-1 w-full max-w-sm bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700"
+            className="mx-1 w-full max-w-sm bg-white  rounded-lg"
           >
             <div className="basis-1/3 flex flex-col items-center">
               <img

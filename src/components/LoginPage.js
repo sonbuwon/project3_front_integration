@@ -152,7 +152,7 @@ function LoginPage() {
         >
           회원가입
         </Button>
-        <div className="login-links">
+        {/* <div className="login-links">
           <Link className="login-links" to={"/"}>
             아이디 찾기
           </Link>{" "}
@@ -164,7 +164,7 @@ function LoginPage() {
           <Link className="login-links" to={"/user/signup"}>
             회원가입
           </Link>
-        </div>
+        </div> */}
         {/* 로그인 페이지 내의 다른 컴포넌트들 */}
         {/* KakaoApi 컴포넌트를 여기서 사용 */}
         {/* <KakaoApi /> */}

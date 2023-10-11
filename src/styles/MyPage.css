@@ -13,7 +13,6 @@ div {
 /* 마이페이지 */
 .greenContainer {
   height: 132px;
-  background-color: #fcc555;
   display: flex;
   align-items: center;
   margin-bottom: 5px;

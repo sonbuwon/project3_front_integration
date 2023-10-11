@@ -92,26 +92,29 @@ function MyPage() {
       });
   };
   return (
-    <div className="wrap">
-      <div className="greenContainer">
-        <div className="name">{userInfo.nickname}님의 마이페이지</div>
+    <div className="wrap w-1/2 mx-auto">
+      <div className="greenContainer bg-amber-400">
+        <p className="text-3xl font-bold">{userInfo.nickname}님의 마이페이지</p>
       </div>
 
       <div className="summaryContainer">
         <div className="item">
-          <div className="number">
-            <h3>예약 리스트</h3>
+          <div>
+            <h3 className="text-2xl font-bold">예약 리스트</h3>
           </div>
           <ul>
             {userInfo.reservationList.length > 0 ? (
-              <ul>
+              <ul className="my-2">
                 {userInfo.reservationList.map((reservation, index) => (
-                  <li key={index}>
-                    {reservation.restaurant_name}
+                  <li key={index} className="flex mt-2">
+                    <p className="w-1/3 text-lg">
+                      {reservation.restaurant_name}
+                    </p>
                     <button
                       onClick={() =>
                         deleteReservation(reservation.reservation_id)
                       }
+                      className="text-blue-700 hover:underline"
                     >
                       예약 삭제
                     </button>
@@ -127,12 +130,8 @@ function MyPage() {
 
       {/* 회원 정보 */}
       <div className="listContainer">
-        <div className="number">
-          <h3>회원 정보</h3>
-        </div>
         <div className="item">
-          <div className="text">이메일 : {userInfo.email}</div>
-          <div className="right"></div>
+          <h3 className="text-2xl font-bold">회원 정보</h3>
         </div>
         <div className="item">
           <div className="text">연락처 : {userInfo.phoneNumber}</div>
@@ -147,13 +146,17 @@ function MyPage() {
           <div className="right"></div>
         </div>
         <div className="button-container">
-          <button className="listbutton" onClick={editUserInfo}>
+          <button
+            className="w-80 focus:outline-none text-white bg-amber-950 hover:bg-amber-400 focus:ring-4 focus:ring-purple-300 font-medium text-sm px-5 py-2.5 mb-2"
+            onClick={editUserInfo}
+          >
             회원 정보 수정
           </button>
         </div>
       </div>
 
-      <div className="infoContainer">
+      {/* 기능이 존재하지 않아서 삭제 */}
+      {/* <div className="infoContainer">
         <Link to="/" className="item">
           <div>공지사항</div>
         </Link>
@@ -163,7 +166,7 @@ function MyPage() {
         <Link to="/" className="item">
           <div>고객센터</div>
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 }

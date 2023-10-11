@@ -45,7 +45,7 @@ function App() {
       <div className="flex flex-col min-h-screen">
         <div className="flex-grow">
           {/* 테마 색상 칸 */}
-          <div className="h-1.5 mb-2 bg-amber-500"></div>
+          <div className="h-1.5 mb-2 bg-amber-400"></div>
           {/* <UserProfile /> */}
           <Router>
             <Navbar userRole={userRole} />
