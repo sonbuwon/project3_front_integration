@@ -30,7 +30,9 @@ function SearchBar() {
     <div>
       {restaurants.length >= 1 ? (
         <div>
-          <h3 className="mb-10 text-4xl flex justify-center">식당 목록</h3>
+          <h3 className="my-10 text-4xl flex justify-center font-bold">
+            검색된 목록
+          </h3>
           <div className="list-container">
             {restaurants.map((restaurant) => (
               <ul className="item shadow-md" key={restaurant.id}>

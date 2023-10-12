@@ -46,7 +46,7 @@ function Navbar({ userRole }) {
             </li>
             <li className="mr-10">
               <Link to="/restaurant/list" className="hover:text-amber-500">
-                식당 목록
+                맛집 목록
               </Link>
             </li>
           </ul>

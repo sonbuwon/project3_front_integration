@@ -46,7 +46,7 @@ function AdminRestaurantList() {
   };
 
   return (
-    <div className="flex justify-center">
+    <div className="mb-20 flex justify-center">
       <div className="w-1/2 relative overflow-x-auto">
         <h3 className="my-4 text-2xl">식당 목록(관리자용)</h3>
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">

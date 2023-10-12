@@ -27,10 +27,15 @@ function TopRatedRestaurantList() {
   return (
     <div>
       <div>
-        <h3 className="my-10 text-4xl flex justify-center">인기 TOP 목록</h3>
+        <h3 className="my-10 text-4xl flex justify-center font-bold">
+          인기 TOP
+        </h3>
         <div className="list-container">
           {restaurants.map((restaurant) => (
-            <ul className="item shadow-md" key={restaurant.id}>
+            <ul
+              key={restaurant.id}
+              className="item shadow-md transition ease-in-out delay-130 hover:-translate-y-1 hover:scale-105 duration-300"
+            >
               <li>
                 <img
                   // 이미지 클릭시에도 식당 상세페이지로 이동
