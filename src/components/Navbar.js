@@ -28,7 +28,7 @@ function Navbar({ userRole }) {
 
   return (
     <div className="header mb-2">
-      <div className="header-area flex justify-around items-center">
+      <div className="header-area flex justify-around items-center px-20">
         {/* 로고 */}
         <div>
           <Link to={"/"}>
